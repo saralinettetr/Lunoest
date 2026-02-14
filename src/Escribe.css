@@ -1,0 +1,248 @@
+.Escribir {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+  }
+  
+  /* CONTENEDOR DE SECCIONES (GRID REAL) */
+  .seccionescaps {
+    display: grid;
+    grid-template-columns: repeat(2, 700px);
+    gap: 2rem;
+    justify-content: center;
+    align-items: start;
+
+  }
+  
+  /* SOLO una sección → centrada */
+  .seccionescaps:has(.panelcaps:only-child) {
+    grid-template-columns: 700px;
+  }
+
+  .seccionescaps-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  
+  /* Título */
+  .tituloEscribe {
+    text-align: center;
+    justify-items: center;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    margin-right: 5rem;
+  }
+  
+  /* Panel (SECCIÓN) */
+  .panelcaps {
+    width: 650px;
+    border: 3px solid #61DDE0;
+    border-radius: 20px;
+    padding: 1rem;
+    background: #07063b50;
+    text-align: left;
+    height: 600px;            
+    display: flex;
+    flex-direction: column;
+  }
+
+  .listacaps {
+    flex: 1;                    
+    overflow-y: auto;           
+    padding-right: 6px;
+  }
+
+  .añadirescrib.escsecc {
+    flex-shrink: 0;
+  }
+
+  .listacaps::-webkit-scrollbar {
+    width: .5rem;
+  }
+  
+  .listacaps::-webkit-scrollbar-thumb {
+    background: #61dee07a;
+    border-radius: 20px;
+  }
+  
+  .listacaps::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  /* Encabezado sección */
+  .panelencabezadoescrib {
+    display: flex;
+    flex-shrink: 0;
+  }
+  
+  .panelencabezadoescrib h6 {
+    font-size: 1.5rem;
+    margin: 4% 0;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Capítulos */
+  .caps {
+    text-align: left;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #07063b8f;
+    border: 2px solid #61DDE0;
+    border-radius: 8px;
+    padding: 0rem 0.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  /* Botones + */
+  .añadirescrib {
+    background: #07063b8f;
+    color: #61DDE0;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  
+  /* + IDEA */
+  .añadirescrib.caps {
+    border: 3px solid #61DDE0;
+    background: #08063b;
+    font-size: 2rem;
+    height: 3.2rem;
+    width: 3.2rem;
+    margin-left: 1.5rem;
+    justify-items: center;
+  }
+  
+  .añadirescrib:hover {
+    background: #0c0a4bd0;
+  }
+  
+  /* + SECCIÓN */
+  .añadirescrib.escsecc {
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1.5rem;
+    border: 2px solid #61DDE0;
+    align-self: flex-start;
+  }
+  
+  .añadirescrib.escsecc:hover {
+    background: #61dee03d;
+  }
+  
+  /* Mover */
+  .moverseccioncap {
+    cursor: grab;
+    font-size: 2rem;
+    color: #61DDE0;
+  }
+  
+  .caps span {
+    font-size: 1.5rem;
+    color: #61DDE0;
+    padding-right: 1rem;
+  }
+
+  .caps .eliminarcaps {
+    font-size: 1rem;
+    cursor: pointer;
+  } 
+
+  .eliminarcaps:hover {
+    transform: scale(1.2);
+  }
+  
+  /* Editable */
+  .editableescribir {
+    outline: none;
+    cursor: text;
+    font-size: 1.1rem;
+    width: 70%;
+  }
+  
+  .editableescribir:focus {
+    border-radius: 4px;
+  }
+  
+  /*Mover*/
+  .movercaps {
+    cursor: grab;
+  }
+  
+  .movercaps:active {
+    cursor: grabbing;
+  }
+  
+  .caps {
+    user-select: none;
+  }
+
+  /* Eliminar (X) */
+.eliminaresc {
+    margin-left: 0.5rem;
+    font-size: 1.5rem;
+    color:#61DDE0;
+    cursor: pointer;
+    user-select: none;
+    text-align: left;
+  }
+  
+  .eliminaresc.seccion:hover {
+    transform: scale(1.1);
+  }
+
+  
+  /* Acciones idea */
+  .accionescaps {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+    justify-content: space-between;
+    text-align: left;
+  }
+  
+  /*IMGS*/
+  .editarcaps {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .editarcaps img {
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    height: auto;
+    display: block;
+    align-items: center;
+    justify-items: center;
+    bottom: 80%;
+  }
+  
+  /* Animado oculto */
+  .edit1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    opacity: 1;
+  }
+
+  .edit2 {
+    opacity: 0;
+  }
+  
+  /* Hover: aparece la animación */
+  .editarcaps:hover .edit1 {
+    opacity: 0;
+  }
+  
+  /* Hover: se oculta el estático */
+  .editarcaps:hover .edit2 {
+    opacity: 1;
+  }

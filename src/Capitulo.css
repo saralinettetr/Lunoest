@@ -1,0 +1,46 @@
+.cap {
+    display: flex;
+    justify-content: center;
+    color: aliceblue;
+    top: 8rem;
+  }
+
+.capdiv {
+    width: 100%;
+    justify-items: center;
+}
+  
+  /* Título */
+  .Titulocap {
+    text-align: center;
+    justify-items: center;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  
+  /* Panel (SECCIÓN) */
+  .panelcap {
+    min-height: 50rem;
+    width:90%;
+    border: 3px solid #61DDE0;
+    border-radius: 20px;
+    padding: 1.2rem;
+    background: #07063b8f;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    margin-bottom: 5rem;
+  }
+  
+  /* Editable */
+  .editabletexto {
+    outline: none;
+    cursor: text;
+  }
+  
+  .editabletexto:focus {
+    border-radius: 4px;
+  }
+  
+  
+  

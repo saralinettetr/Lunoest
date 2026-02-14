@@ -1,0 +1,57 @@
+/* ================= ESTRUCTURA NARRATIVA ================= */
+
+.titulohist {
+    letter-spacing: 0px;
+    text-align: center;
+    justify-items: center;
+    margin-right: 1rem;
+}
+
+.estructura-narrativa {
+    border: 3px solid #6ea0ff;
+    border-radius: 20px;
+    padding: 2rem;
+    background: #07063b50;
+  }
+  
+  .titulo-estructura {
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 0;
+    color: aliceblue;
+  }
+  
+  .estructura-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+  
+  .estructura-bloque {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .estructura-bloque h6 {
+    text-align: center;
+    margin: 2rem 0 1rem;
+    color: aliceblue;
+  }
+  
+  .estructura-bloque .campohist {
+    min-height: 12rem;
+  }
+
+  .campohist {
+    background: #07063b8f;
+    border: 2px solid #7ba5ff;
+    border-radius: 8px;
+    padding: 0.8rem;
+    outline: none;
+    cursor: text;
+    color: aliceblue;
+    font-size: 1rem;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    min-height: 8rem;
+  }

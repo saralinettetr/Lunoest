@@ -1,0 +1,316 @@
+.tarjetapj {
+  display: flex;
+  flex-direction: column;
+  white-space: pre-line;
+  line-height: 1.5;
+  padding: 1rem;
+  background: #07063b8f;
+  border: 2px solid #7ba5ff;
+  border-radius: 12px;   
+  height: 30rem;        
+  flex-shrink: 0;   
+  width: 26rem;
+}
+
+.tarjetapj p {
+  margin: 0.25rem 0;
+}
+
+.contenedor-tarjetas::-webkit-scrollbar {
+  height: 0.6rem;
+}
+
+.contenedor-tarjetas::-webkit-scrollbar-thumb {
+  background: #07063bbd;
+  border-radius: 20px;
+}
+
+.contenedor-tarjetas::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.caracteristicaspj {
+  flex: 1;              
+  overflow-y: auto;     
+  padding-right: 6px;
+}
+
+.añadirpj.escsecc {
+  flex-shrink: 0;
+  height: 420px; 
+}
+
+.caracteristicaspj::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.caracteristicaspj::-webkit-scrollbar-thumb {
+  background: #7ba5ff74;
+  border-radius: 20px;
+}
+
+.caracteristicaspj::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.pj-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+/* NOMBRE DEL PERSONAJE */
+.personaje-nombre {
+  width: 100%;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding-bottom: 0.3rem;
+  cursor: text;
+  outline: none;
+}
+
+.TodosPersonajes {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: #7ba5ff;
+  font-size: 1.5rem;
+}
+
+/* CONTENEDOR DE SECCIONES */
+.seccionespjs {
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+}
+
+/* WRAPPER */
+.seccionespjs-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* TÍTULO */
+.tituloPersonajes {
+  text-align: center;
+  justify-items: center;
+  border-radius: 12px;
+  margin-bottom: 0rem;
+  margin-right: 3rem;
+}
+
+/* PANEL SECCIÓN */
+.panelpjs {
+  width: 90rem;
+  height: 44rem;
+  border: 3px solid #7ba5ff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  background: #07063b50;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  margin-top: 2rem;   
+}
+
+/* ENCABEZADO SECCIÓN */
+.tipodepjs {
+  display: flex;
+}
+
+.tipodepjs h6 {
+  font-size: 1.5rem;
+  margin: 2rem 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* ===== CONTENEDOR DE TARJETAS (GRID REAL) ===== */
+.contenedor-tarjetas {
+  display: flex;              
+  flex-direction: row;
+  gap: 1.5rem;
+  flex: 1;                    
+  overflow-x: auto;           
+  overflow-y: hidden;
+  padding-bottom: 0.5rem;
+}
+
+/* TARJETA INDIVIDUAL */
+.pjs {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  user-select: none;
+}
+
+/* BOTONES + */
+.añadirpj {
+  background: transparent;
+  color: #7ba5ff;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 3px solid #7ba5ff;
+  font-size: 1.5rem;
+}
+
+.añadirpj.caps {
+  border: 3px solid #7ba5ff;
+  background: #08063b;
+  font-size: 2rem;
+  height: 3.2rem;
+  width: 3.2rem;
+  flex-shrink: 0;       
+  margin-top: 2rem;
+}
+
+.añadirpj.caps:hover {
+  background: #08063b7a;
+}
+
+/* + SECCIÓN */
+.añadirpj.escsecc {
+  border: 2px solid #7ba5ff;
+  background-color: #07063b8f;
+  align-self: flex-end;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-top: 1rem;
+}
+
+.añadirpj.escsecc:hover {
+  background:  #7ba5ff23;
+}
+
+.añadirpj.caract {
+  width: 2.2rem;
+  height: 2.2rem;
+  font-size: 1.2rem;
+  border: 2px solid #7ba5ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.añadirpj.caract:hover {
+  background: #7ba5ff3d;
+}
+
+/* MOVER */
+.moverseccionpjs {
+  cursor: grab;
+  font-size: 2rem;
+  color: #7ba5ff;
+}
+
+.pjs .pregunta {
+  color: #7ba5ff;
+  font-size: 1.1rem;
+  margin-bottom: 0.2rem;
+  outline: none;
+  cursor: text;
+}
+
+.pjs .respuesta {
+  color: aliceblue;
+  font-size: 1rem;
+  outline: none;
+  cursor: text;
+  word-wrap: break-word;
+
+  background-color: #7ba5ff1e;
+  border-radius: 5px;
+  padding: 4px 6px;
+}
+
+
+.fila-caracteristica {
+  display: flex;
+  flex-direction: column;   /* ← CLAVE */
+  width: 100%;
+  margin: 0.6rem 0;
+}
+
+/* EDITABLE */
+.editabletipospjs {
+  outline: none;
+  cursor: text;
+  font-size: 1.1rem;
+  width: 70%;
+}
+
+.editabletipospjs:focus {
+  border-radius: 4px;
+}
+
+/* MOVER */
+.moverpjs {
+  cursor: grab;
+  font-size: 1.4rem;
+  color:#7ba5ff;
+}
+
+.moverpjs:active {
+  cursor: grabbing;
+}
+
+/* ELIMINAR */
+
+.eliminarpj {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #7ba5ff;
+}
+
+.eliminarpj:hover {
+  transform: scale(1.2);
+}
+
+.eliminarpjs.seccion:hover {
+  transform: scale(1.1);
+}
+
+.eliminarpjs.seccion {
+  cursor: pointer;
+}
+
+/* ACCIONES */
+.accionespjs {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .contenedor-tarjetas {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .contenedor-tarjetas {
+    grid-template-columns: 1fr;
+  }
+
+  .panelpjs {
+    width: 100%;
+  }
+}
+
+.contenedor-boton-caps {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+

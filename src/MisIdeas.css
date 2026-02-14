@@ -1,0 +1,198 @@
+.mis-ideas {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+}
+
+/* CONTENEDOR DE SECCIONES (GRID REAL) */
+.secciones {
+  display: grid;
+  grid-template-columns: repeat(3, 450px);
+  gap: 2rem;
+  justify-content: center;
+  align-items: start;
+}
+
+/* SOLO una sección → centrada */
+.secciones:has(.panel1:only-child) {
+  grid-template-columns: 450px;
+}
+
+.secciones-wrapper {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+}
+
+/* Título */
+.tituloMisIdeas {
+  text-align: center;
+  justify-items: center;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  margin-right: 5rem;
+}
+
+/* Panel (SECCIÓN) */
+.panel1 {
+  width: 420px;
+  height: 72vh;
+  border: 3px solid #7ba5ff;
+  border-radius: 20px;
+  padding: 1rem;
+  background: #07063b50;      /* SCROLL INTERNO */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.panel1 .btn-add.idea {
+  margin-top: auto;   /* lo empuja al fondo del panel */
+}
+
+.divideas{
+  overflow-y: auto;
+  padding: 1.2rem 0.5rem;
+}
+
+.divideas::-webkit-scrollbar {
+  width: .5rem;
+}
+
+.divideas::-webkit-scrollbar-thumb {
+  background: #7ba5ff76;
+  border-radius: 20px;
+}
+
+.divideas::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Encabezado sección */
+.panelencabezado {
+  display: flex;
+}
+
+.panelencabezado h6 {
+  margin: 4% 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* Idea */
+.idea1 {
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #07063b8f;
+  border: 2px solid #7ba5ff;
+  border-radius: 8px;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1rem;
+  overflow: visible;
+  user-select: none;
+}
+
+.idea1 p {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.idea1 span {
+  font-size: 1.5rem;
+  color: #7ba5ff;
+}
+
+.idea1 .eliminar {
+  font-size: 0.8rem;
+} 
+
+/* Botones + */
+.btn-add {
+  background: #07063b8f;
+  color: #7ba5ff;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* + IDEA */
+.btn-add.idea {
+  width: 2.5rem;
+  height: 2.5rem;
+  font-size: 1.5rem;
+  border: 2px solid #7ba5ff;
+  align-self: flex-start;
+}
+
+.btn-add.idea:hover {
+  background: rgba(93, 150, 255, 0.2);
+}
+
+/* + SECCIÓN */
+.btn-add.section {
+  border: 3px solid #7ba5ff;
+  background: #08063b;
+  font-size: 2rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  margin-left: 1rem;
+  flex-shrink: 0;
+  margin-left: 1.5rem;
+}
+
+.btn-add.section:hover {
+  background: #0c0a4bd0;
+}
+
+/* Mover */
+.moverseccion1 {
+  cursor: grab;
+  font-size: 2rem;
+  color: #7ba5ff;
+}
+
+/* Editable */
+.editable {
+  outline: none;
+  cursor: text;
+}
+
+.editable:focus {
+  border-radius: 4px;
+}
+
+/*Mover*/
+.moverIdea {
+  cursor: grab;
+}
+
+.moverIdea:active {
+  cursor: grabbing;
+}
+
+/* Eliminar (X) */
+.eliminar {
+  margin-left: 0.5rem;
+  font-size: 1rem;
+  color: #7ba5ff;
+  cursor: pointer;
+  user-select: none;
+  text-align: left;
+}
+
+.eliminar:hover {
+  transform: scale(1.1);
+}
+
+/* Acciones idea */
+.idea-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  justify-content: space-between;
+  text-align: left;
+}
