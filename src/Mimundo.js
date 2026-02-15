@@ -2,19 +2,27 @@ import { useState } from "react";
 import "./Mimundo.css";
 
 /* ======================
+   HELPERS
+====================== */
+const crearItem = () => ({
+  id: Date.now() + Math.random(),
+  texto: "",
+});
+
+/* ======================
    BLOQUES BASE
 ====================== */
 const bloquesIniciales = [
-  { id: "lugares", titulo: "Lugares relevantes", items: [""] },
-  { id: "eventos", titulo: "Eventos históricos", items: [""] },
-  { id: "estructura", titulo: "Estructura social", items: [""] },
-  { id: "costumbres", titulo: "Costumbres y creencias", items: [""] },
+  { id: "lugares", titulo: "Lugares relevantes", items: [crearItem()] },
+  { id: "eventos", titulo: "Eventos históricos", items: [crearItem()] },
+  { id: "estructura", titulo: "Estructura social", items: [crearItem()] },
+  { id: "costumbres", titulo: "Costumbres y creencias", items: [crearItem()] },
 ];
 
 const crearBloqueExtra = () => ({
   id: Date.now() + Math.random(),
   titulo: "Otros",
-  items: [""],
+  items: [crearItem()],
 });
 
 function Mimundo() {
@@ -27,7 +35,9 @@ function Mimundo() {
   const agregarItem = (bloqueId) => {
     setBloques((prev) =>
       prev.map((b) =>
-        b.id === bloqueId ? { ...b, items: [...b.items, ""] } : b
+        b.id === bloqueId
+          ? { ...b, items: [...b.items, crearItem()] }
+          : b
       )
     );
   };
@@ -35,11 +45,14 @@ function Mimundo() {
   /* ======================
      ELIMINAR ITEM
   ====================== */
-  const eliminarItem = (bloqueId, index) => {
+  const eliminarItem = (bloqueId, itemId) => {
     setBloques((prev) =>
       prev.map((b) =>
         b.id === bloqueId
-          ? { ...b, items: b.items.filter((_, i) => i !== index) }
+          ? {
+              ...b,
+              items: b.items.filter((item) => item.id !== itemId),
+            }
           : b
       )
     );
@@ -91,7 +104,11 @@ function Mimundo() {
         {/* DESCRIPCIÓN */}
         <div className="bloque descripcion">
           <h6>Descripción</h6>
-          <div className="campo" contentEditable suppressContentEditableWarning />
+          <div
+            className="campo"
+            contentEditable
+            suppressContentEditableWarning
+          />
         </div>
 
         {/* GRID DE BLOQUES */}
@@ -105,7 +122,6 @@ function Mimundo() {
             >
               {/* ENCABEZADO */}
               <div className="encabezadocat">
-                {/* DRAG */}
                 <span
                   className="drag-handle"
                   draggable
@@ -130,23 +146,26 @@ function Mimundo() {
               </div>
 
               {/* CAMPOS */}
-              {bloque.items.map((_, i) => (
-              <div key={i} className="campo campo-con-x">
-                <div
-                  className="campo-texto"
-                  contentEditable
-                  suppressContentEditableWarning
-                />
-                <button
-                  className="btn-eliminar"
-                  onClick={() => eliminarItem(bloque.id, i)}
-                  contentEditable={false}
-                  title="Eliminar campo"
-                >
-                  ✕
-                </button>
-              </div>
-            ))}
+              {bloque.items.map((item) => (
+                <div key={item.id} className="campo campo-con-x">
+                  <div
+                    className="campo-texto"
+                    contentEditable
+                    suppressContentEditableWarning
+                  />
+
+                  <button
+                    className="btn-eliminar"
+                    onClick={() =>
+                      eliminarItem(bloque.id, item.id)
+                    }
+                    contentEditable={false}
+                    title="Eliminar campo"
+                  >
+                    ✕
+                  </button>
+                </div>
+              ))}
 
               <button
                 className="btn-agregar"
@@ -160,7 +179,10 @@ function Mimundo() {
 
         {/* BOTÓN NUEVO BLOQUE */}
         <div style={{ display: "flex", justifyContent: "center" }}>
-          <button className="btn-agregar-bloque" onClick={agregarBloque}>
+          <button
+            className="btn-agregar-bloque"
+            onClick={agregarBloque}
+          >
             +
           </button>
         </div>
